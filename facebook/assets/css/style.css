@@ -1,0 +1,689 @@
+* {
+    font-family: inherit;
+}
+
+body {
+    overflow-x: hidden !important;
+}
+
+h1 {
+    font-size: 4.5rem !important;
+    font-weight: 700 !important;
+
+
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    top: 50% !important;
+    --swiper-navigation-size: 16px !important;
+    width: 40px !important;
+    height: 40px !important;
+}
+
+.forgot-loginBtn {
+    width: 400px;
+    height: 370px;
+}
+
+.swiper2 {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    padding-top: 17px;
+    padding-bottom: 17px;
+}
+
+#ortak-buttonlar {
+    position: absolute;
+    margin-top: calc(0px -(var(--swiper-navigation-size) / 2));
+    top: 50% !important;
+    --swiper-navigation-size: 16px !important;
+    width: 40px !important;
+    height: 40px !important;
+    top: 45% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    color: var(--swiper-navigation-color, var(--swiper-theme-color));
+}
+
+.swiper-button-next-6,
+.swiper-button-next-5,
+.swiper-button-next-4,
+.swiper-button-next-3,
+.swiper-button-next-2 {
+    left: auto;
+}
+
+#slide-hover :hover {
+    background-color: #c2cad6;
+}
+
+/* LOGİN PAGE İndex.html BİTİŞ */
+.modal-reels-content {
+    color: var(--bs-modal-color);
+    pointer-events: auto;
+    background-color: var(--bs-modal-bg);
+    background-clip: padding-box;
+
+    border-radius: var(--bs-modal-border-radius);
+    outline: 0;
+}
+
+
+
+.user:hover {
+    background-color: #c2cad6;
+}
+
+.create-storyBtn {
+    background-color: #c2cad6;
+}
+
+.graident-blue {
+    height: 100%;
+    background: linear-gradient(to right, darkblue 20%, blue 90%)
+}
+
+.graident-purple {
+    height: 100%;
+    background: linear-gradient(to right, magenta 20%, purple 90%)
+}
+
+.fixed-content {
+    top: 0;
+    bottom: 0;
+    position: fixed;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-width: inherit;
+    width: 20%;
+}
+
+.fixed-content-2 {
+    right: 0;
+    top: 55px;
+    bottom: 0;
+    position: fixed;
+    width: 20%;
+}
+
+.fs-7 {
+    font-size: 1.1rem;
+}
+
+.fixed-content-3 {
+    top: 255px;
+    bottom: 0;
+    position: fixed;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-width: inherit;
+    width: 19.6%;
+    /**/
+}
+
+.fixed-content-4 {
+    top: 125px;
+    bottom: 0;
+    position: absolute;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-width: inherit;
+    right: 0;
+
+}
+
+.fixed-content-5 {
+    top: 60px;
+    bottom: 0;
+    position: absolute;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-width: inherit;
+    width: 100%;
+
+}
+
+.back-button {
+    display: none;
+}
+
+.up-arrow {
+    display: none;
+}
+
+.up-arrow-2 {
+    display: none;
+}
+
+.viewmore {
+    display: none;
+}
+
+.viewmore-2 {
+    display: none;
+}
+
+.search-box {
+    height: 40px;
+    display: flex;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 30px;
+    align-items: center;
+}
+
+.search-box-2 {
+    height: 40px;
+    display: flex;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 30px;
+    align-items: center;
+}
+
+.search-box-2 {
+    height: 40px;
+    display: flex;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 30px;
+    align-items: center;
+}
+
+.search-box-3 {
+    height: 40px;
+    display: flex;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 30px;
+    align-items: center;
+}
+
+.search-box-4 {
+    height: 40px;
+    display: flex;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 30px;
+    align-items: center;
+}
+
+.search-box-5 {
+    height: 40px;
+    display: flex;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 30px;
+    align-items: center;
+}
+
+.scrollable-div {
+    overflow-y: hidden;
+    /* Başlangıçta scroll kapalı */
+    padding: 10px;
+}
+
+.active-button {
+    color: #0d6efd !important;
+    background-color: #ebf5ff !important;
+    /* Mavi arka plan */
+}
+
+
+.inactive-button {
+    color: black !important;
+    background-color: #d8dadf !important;
+    /* Beyaz arka plan */
+}
+
+#livevideo-content2 {
+    display: none !important;
+}
+
+
+.custom-button i {
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.custom-button span {
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.custom-button .dropdown-toggle::after {
+    margin-left: 9px;
+    font-size: 10px;
+    color: #6c757d;
+}
+
+.dropdown-toggle {
+    position: relative;
+    /* ::after elementinin konumunu bu öğeye göre belirle */
+    text-align: left;
+    /* Metni sola yasla */
+    padding-left: 15px;
+    /* Metni soldan biraz uzaklaştır */
+}
+
+.dropdown-toggle::after {
+    content: '';
+    /* İçeriği boş bırak */
+    display: inline-block;
+    /* Satır içi blok olarak göster */
+    width: 0;
+    /* Genişliği sıfır yap */
+    height: 0;
+    /* Yüksekliği sıfır yap */
+    border-left: 4px solid transparent;
+    /* Sol kenarı şeffaf yap */
+    border-right: 4px solid transparent;
+    /* Sağ kenarı şeffaf yap */
+    border-top: 6px solid #000;
+    /* Yukarı ok şekli için üst kenarı koyu renk yap */
+    position: absolute;
+    /* Mutlak konumlandırma yap */
+    right: 10px;
+    /* Sağdan 10px uzaklıkta */
+    top: 50%;
+    /* Yükseklik olarak ortala */
+    transform: translateY(-50%);
+    /* Tam ortalamak için yukarı kaydır */
+}
+
+.form-control:focus {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.custom-dropdown-menu {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 0;
+}
+
+.list-border li {
+    background-color: #f0f2f5 !important;
+    height: 85px !important;
+    border-radius: 1rem !important;
+    border: none !important;
+    margin: 2rem 0 ;
+}
+
+.list-border li img {
+    position: absolute;
+    left: -7%;
+    width: 40px;
+    height: 40px;
+}
+
+#commentsList2 li img {
+    position: absolute;
+    left: -7% !important;
+    width: 36px;
+    height: 36px;
+    object-fit: cover;
+}
+
+#commentsList4 li img {
+    position: absolute;
+    left: -14% !important;
+    width: 36px;
+    height: 36px;
+    object-fit: cover;
+}
+
+
+#content-comment {
+
+    display: flex;
+    position: relative;
+}
+
+#content-comment2 {
+
+    display: flex;
+    position: relative;
+}
+
+#modal-content-comment {
+    display: flex;
+    position: relative;
+}
+
+#content-comment3 {
+
+    display: flex;
+    position: relative;
+}
+
+textarea.vertical {
+    resize: vertical !important;
+    max-height: 130px !important;
+    min-height: 20px !important;
+}
+
+.dropdown-item {
+    padding: 10px 20px;
+    display: flex;
+
+    justify-content: space-between;
+    /* İkonu sağa hizalamak için */
+    cursor: pointer;
+}
+
+.dropdown-item .text {
+    flex-grow: 1;
+}
+
+.dropdown-item .checkmark {
+    display: none;
+}
+
+.dropdown-item.selected .checkmark {
+    display: block;
+}
+
+.dropdown-item:hover {
+    background-color: #f2f2f2;
+}
+
+.dropdown-header {
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.dropdown-divider {
+    margin: 0;
+}
+
+.my-div {
+    border: 2px solid transparent !important;
+    padding: 20px !important;
+    position: relative;
+    /* Fare konumunu kontrol etmek için */
+
+}
+
+.my-div.active {
+    border-color: blue !important;
+    /* Kenarlık rengini mavi yap */
+}
+
+
+.my-div:hover {
+    border-color: blue !important;
+    /* Hover durumunda kenarlık rengi mavi olur */
+}
+
+.vertical-line {
+    width: 341px;
+    height: 1px;
+    background-color: gray;
+}
+
+textarea {
+    resize: none !important;
+    overflow: hidden;
+    min-height: 50px;
+    max-height: 130px;
+}
+
+#threedots-content-dropdown {
+    transform: translate(-340px, 20px) !important;
+    height: 475px !important;
+    width: 18vw;
+}
+
+.offcanvas.offcanvas-start {
+    width: 18% !important;
+    bottom: 0 !important;
+    left: 70% !important;
+    width: var(--bs-offcanvas-width);
+    border-right: var(--bs-offcanvas-border-width) solid var(--bs-offcanvas-border-color);
+    transform: translateX(-100%);
+}
+
+#mobile-row {
+    width: 75%;
+}
+
+.nav-active {
+    position: relative;
+}
+
+.nav-active::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    border-bottom: 3px solid #0d6efd !important;
+    transform: translateY(4.5px);
+}
+
+.left-menu .menu-item :hover {
+    background-color: #cccccc;
+    border-radius: 5px;
+}
+
+#big-menu {
+    display: none;
+}
+
+#messenger-dropdown {
+    display: none;
+}
+
+#messenger-dropdown2 {
+    display: none;
+}
+
+#notification {
+    display: none;
+}
+
+#notification2 {
+    display: none;
+}
+
+
+#see-profile-dropdown {
+    display: none;
+}
+
+#see-profile-dropdown2 {
+    display: none;
+}
+
+.left-hiddenMenu-2 {
+    display: none;
+}
+
+#btn-content :hover {
+    background-color: #f2f2f2;
+    border-radius: 5px;
+}
+
+.left-hiddenMenu {
+    display: none;
+}
+
+
+#modal-content-emotes {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    color: var(--bs-modal-color);
+    pointer-events: auto;
+    background-color: var(--bs-modal-bg);
+    background-clip: padding-box;
+    border: var(--bs-modal-border-width) solid var(--bs-modal-border-color);
+    border-radius: var(--bs-modal-border-radius);
+    outline: 0;
+    top: 7rem;
+}
+
+.col-lg-6 {
+    padding: 0 !important;
+}
+
+.right-menu {
+    overflow-y: hidden;
+}
+
+@media only screen and (max-width: 991px) {
+    .col-lg-6 {
+        padding: 0 !important;
+    }
+
+    .swiper-slide span {
+        font-size: 13px;
+    }
+
+    .swiper-slide p {
+        font-size: 13px !important;
+    }
+    .list-border li img {
+        position: absolute;
+        left: -32%;
+        width: 40px;
+        height: 40px;
+    }
+    .input-search {
+        display: none;
+    }
+
+    .bi.bi-plus-circle-fill {
+        bottom: 18px !important;
+    }
+
+    #mobile-row {
+        width: 100% !important;
+    }
+
+    .input-group {
+        width: 305px !important;
+    }
+
+    .nav_btn-active::before {
+        display: none !important;
+    }
+
+    .face-icon {
+        display: none !important;
+
+    }
+
+    .text-wrapper p {
+        width: 100% !important;
+    }
+
+    #mobile-modal {
+        width: 100% !important;
+    }
+
+    #content-wrapper {
+        width: 100% !important;
+    }
+
+    .nav-active::before {
+        display: none;
+    }
+
+    #search-dropdown {
+        width: 100% !important;
+        height: 100% !important;
+        transform: translate(0px, 76px) !important;
+        height: 100vh !important;
+        border-radius: 0 !important;
+        max-height: 100vh !important;
+        box-shadow: none !important;
+    }
+
+    #content-comment {
+        display: none !important;
+    }
+  
+    #content-comment2 {
+        display: none !important;
+    }
+
+    #content-comment3 {
+        display: none !important;
+    }
+
+    #like-button{
+        padding: 3px 25px;
+        border-radius: 2rem;
+        background-color: #f0f2f5;
+    }
+    #like-button2{
+        padding: 3px 25px;
+        border-radius: 2rem;
+        background-color: #f0f2f5;
+    }
+    #like-button3{
+        padding: 3px 25px;
+        border-radius: 2rem;
+        background-color: #f0f2f5;
+    }
+    #whatsApp {
+        padding: 10px 38px;
+        border-radius: 2rem;
+        background-color: #f0f2f5;
+    }
+   #paylas-btn{
+    padding: 10px 38px;
+    border-radius: 2rem;
+    background-color: #f0f2f5;
+   }
+   #yorumyapbtn{
+    padding: 10px 38px;
+    border-radius: 2rem;
+    background-color: #f0f2f5;
+}
+   #yorumyapbtn2{
+    padding: 10px 38px;
+    border-radius: 2rem;
+    background-color: #f0f2f5;
+}
+    #yorumyapbtn3{
+        padding: 10px 38px;
+        border-radius: 2rem;
+        background-color: #f0f2f5;
+    }
+
+
+    .swiper {
+        width: 100% !important;
+    }
+
+    .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .forgot-loginBtn {
+        width: 300px;
+        height: 340px;
+    }
+}

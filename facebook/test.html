@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yorum Alanı</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/sass/variables.css">
+    <!-- swiper slider -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- bootstrap CDN LİNK -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- bootstrap icon link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- jquery script -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mobile-commentDropdown">
+        Launch demo modal
+    </button>
+
+    <div class="modal fade" id="mobile-commentDropdown" tabindex="-1" aria-hidden="true" style="overflow-y: auto;">
+        <div class="modal-dialog m-0  h-100" >
+            <div class="modal-content rounded-0 h-100 border-0  bg-white" >
+            
+                    <div class="modal-header border-bottom d-flex justify-content-center text-center">
+                        <div id="gönderi-geri-btn"
+                            class="d-flex align-items-center justify-content-center position-absolute" style=" left: 15px;"
+                            role="button">
+                            <i data-visualcompletion="css-img"
+                                style="background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/_xO7nhjX4UX.png&quot;); background-position: 0px -175px; background-size: auto; width: 20px; height: 20px; background-repeat: no-repeat; display: inline-block;"></i>
+                        </div>
+    
+                        <div>
+                            <h5>Ali'nin gönderisi
+                            </h5>
+                        </div>
+    
+                        <div class="position-absolute d-flex align-items-center" style="right: 15px;">
+                            <i class="bi bi-search" id="search-iconİd"></i>
+                        </div>
+                    </div>
+                    <div class="modal-body p-0">
+                        <div id="content-wrapper" class=" mx-auto p-0  bg-white rounded-3 border border-top-0 ">
+                            <div class="top-wrapper px-2 py-2 ">
+                                <div class="d-flex align-items-center">
+                                    <div class="img my-0">
+                                        <img src="assets/img/profilephoto.jpg" class="rounded-circle  " width="40px"
+                                            height="40px" alt="avatar">
+                                    </div>
+                                    <div class=" mx-3 my-0">
+                                        <span class="fw-medium">Muhammed Ali</span>
+                                        <div class="d-flex align-items-center">
+                                            <p class="p-0 mb-0 me-2">9s ·</p>
+                                            <svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor"
+                                                class="x19dipnz x1lliihq x1tzjh5l x1k90msu x2h7rmj x1qfuztq"
+                                                style="--color: var(--secondary-icon);">
+    
+                                                <g fill-rule="evenodd" transform="translate(-448 -544)">
+                                                    <g>
+                                                        <path
+                                                            d="M109.5 408.5c0 3.23-2.04 5.983-4.903 7.036l.07-.036c1.167-1 1.814-2.967 2-3.834.214-1 .303-1.3-.5-1.96-.31-.253-.677-.196-1.04-.476-.246-.19-.356-.59-.606-.73-.594-.337-1.107.11-1.954.223a2.666 2.666 0 0 1-1.15-.123c-.007 0-.007 0-.013-.004l-.083-.03c-.164-.082-.077-.206.006-.36h-.006c.086-.17.086-.376-.05-.529-.19-.214-.54-.214-.804-.224-.106-.003-.21 0-.313.004l-.003-.004c-.04 0-.084.004-.124.004h-.037c-.323.007-.666-.034-.893-.314-.263-.353-.29-.733.097-1.09.28-.26.863-.8 1.807-.22.603.37 1.166.667 1.666.5.33-.11.48-.303.094-.87a1.128 1.128 0 0 1-.214-.73c.067-.776.687-.84 1.164-1.2.466-.356.68-.943.546-1.457-.106-.413-.51-.873-1.28-1.01a7.49 7.49 0 0 1 6.524 7.434"
+                                                            transform="translate(354 143.5)"></path>
+                                                        <path
+                                                            d="M104.107 415.696A7.498 7.498 0 0 1 94.5 408.5a7.48 7.48 0 0 1 3.407-6.283 5.474 5.474 0 0 0-1.653 2.334c-.753 2.217-.217 4.075 2.29 4.075.833 0 1.4.561 1.333 2.375-.013.403.52 1.78 2.45 1.89.7.04 1.184 1.053 1.33 1.74.06.29.127.65.257.97a.174.174 0 0 0 .193.096"
+                                                            transform="translate(354 143.5)"></path>
+                                                        <path fill-rule="nonzero"
+                                                            d="M110 408.5a8 8 0 1 1-16 0 8 8 0 0 1 16 0zm-1 0a7 7 0 1 0-14 0 7 7 0 0 0 14 0z"
+                                                            transform="translate(354 143.5)"></path>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="treedots-wrapper d-flex align-items-center justify-content-end ms-auto my-0">
+    
+                                        <i id="content-threedotsBtn" role="button" class="bi bi-three-dots text-dark fs-3"
+                                            data-bs-toggle="dropdown" aria-expanded="false"></i>
+    
+    
+                                        <div class="dropdown">
+    
+                                            <ul class="dropdown-menu" id="content1-threedots-dropdown"
+                                                aria-labelledby="dropdownMenuButton">
+                                                <li>
+                                                    <a class="dropdown-item d-flex" href="#">
+                                                        <i data-visualcompletion="css-img" class="x1b0d499 xep6ejk"
+                                                            style="background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v3/y6/r/vZx3HqQM23H.png&quot;); background-position: 0px -151px; background-size: auto; width: 20px; height: 20px; background-repeat: no-repeat; display: inline-block;"></i>
+                                                        <div class="d-flex flex-column">
+                                                            <span class="fw-medium fs-6">Daha fazla göster</span>
+                                                            <span style="font-size: 11px;">Gördüğün daha fazla gönderi
+                                                                bunun gibi olucak</span>
+                                                        </div>
+    
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item d-flex" href="#">
+                                                        <i data-visualcompletion="css-img" class="x1b0d499 xep6ejk"
+                                                            style="background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v3/y6/r/vZx3HqQM23H.png&quot;); background-position: 0px -151px; background-size: auto; width: 20px; height: 20px; background-repeat: no-repeat; display: inline-block;"></i>
+                                                        <div class="d-flex flex-column">
+                                                            <span class="fw-medium fs-6">Daha az göster</span>
+                                                            <span style="font-size: 11px;">Gördüğün daha az gönderi
+                                                                bunun gibi olucak</span>
+                                                        </div>
+    
+                                                    </a>
+                                                </li>
+                                                <hr class="m-0">
+                                                <li>
+                                                    <a class="dropdown-item d-flex" href="#">
+                                                        <i data-visualcompletion="css-img" class="x1b0d499 xep6ejk"
+                                                            style="background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/eZ2Fmf180HH.png&quot;); background-position: 0px -217px; background-size: auto; width: 20px; height: 20px; background-repeat: no-repeat; display: inline-block;"></i>
+                                                        <div class="d-flex flex-column">
+                                                            <span class="fw-medium fs-6">Gönderiyi kaydet</span>
+                                                            <span style="font-size: 11px;">Bunu kaydedilen içeriklerine
+                                                                ekle</span>
+                                                        </div>
+    
+                                                    </a>
+                                                </li>
+                                                <hr class="m-0">
+                                                <li>
+                                                    <a class="dropdown-item d-flex" href="#">
+                                                        <i data-visualcompletion="css-img" class="x1b0d499 xep6ejk"
+                                                            style="background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v3/y-/r/1v5lw97v70Q.png&quot;); background-position: 0px -63px; background-size: auto; width: 20px; height: 20px; background-repeat: no-repeat; display: inline-block;"></i>
+                                                        <span class="fw-medium fs-6">Bu gönderi için bildirimleri
+                                                            aç</span>
+                                                    </a>
+                                                    <a class="dropdown-item d-flex" href="#">
+                                                        <i data-visualcompletion="css-img" class="x1b0d499 xep6ejk"
+                                                            style="background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v3/y-/r/1v5lw97v70Q.png&quot;); background-position: 0px -168px; background-size: auto; width: 20px; height: 20px; background-repeat: no-repeat; display: inline-block;"></i>
+                                                        <span class="fw-medium fs-6">Sitene göm</span>
+                                                    </a>
+                                                </li>
+                                                <hr class="m-0">
+                                                <li>
+                                                    <a class="dropdown-item d-flex" href="#">
+                                                        <img alt="" height="20" width="20" style="margin-right: 0.4rem;"
+                                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yL/r/AS0wO6lZErj.png">
+                                                        <span class="fw-medium fs-6">Gönderiyi gizle</span>
+                                                    </a>
+    
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item d-flex" href="#">
+                                                        <img alt="" height="20" width="20" style="margin-right: 0.4rem;"
+                                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yE/r/mp_faH0qhrY.png">
+                                                        <div class="d-flex flex-column">
+                                                            <span class="fw-medium fs-6">Emir'i 30 günlüğüne geçiçi
+                                                                gizle</span>
+                                                            <span style="font-size: 11px;">Gönderi almayı geçiçi olarak
+                                                                durdurur</span>
+                                                        </div>
+    
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item d-flex" href="#">
+                                                        <img alt="" height="20" width="20" style="margin-right: 0.4rem;"
+                                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yI/r/vq1lTznKLGh.png">
+                                                        <div class="d-flex flex-column">
+                                                            <span class="fw-medium fs-6">Emir'i takibi bırak</span>
+                                                            <span style="font-size: 11px;">Bu kişinin gönderilerini
+                                                                görmeyi durdurur</span>
+                                                        </div>
+    
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item d-flex" href="#">
+                                                        <img alt="" height="20" width="20" style="margin-right: 0.4rem;"
+                                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/OKvpjIcm4Eh.png">
+                                                        <div class="d-flex flex-column">
+                                                            <span class="fw-medium fs-6">Emir'in profilini
+                                                                engelle</span>
+                                                            <span style="font-size: 11px;">Birbirinizi göremeyeceksiniz
+                                                                ve iletişime geçemeyeceksiniz</span>
+                                                        </div>
+    
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+    
+    
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- orta içeriklere tıklanınca tam ekranda açması -->
+                            <div class="content-main">
+                                <img id="modal-contentbtn" class="w-100"
+                                    src="https://pbs.twimg.com/media/GKUfwr9XIAA1eGV.jpg" alt="" data-bs-toggle="modal"
+                                    data-bs-target="#content-modal-1" type="button">
+    
+                            </div>
+                            <div class="bottom-content  px-1 px-lg-3 py-2 bg-white">
+                                <div class="d-flex align-items-center mb-2">
+                                    <img class="x16dsc37" height="18" role="presentation" width="18"
+                                        src="data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z' fill='url(%23paint0_linear_15251_63610)'/%3E%3Cpath d='M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z' fill='url(%23paint1_radial_15251_63610)'/%3E%3Cpath d='M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z' fill='url(%23paint2_radial_15251_63610)' fill-opacity='.5'/%3E%3Cpath d='M7.3014 3.8662a.6974.6974 0 0 1 .6974-.6977c.6742 0 1.2207.5465 1.2207 1.2206v1.7464a.101.101 0 0 0 .101.101h1.7953c.992 0 1.7232.9273 1.4917 1.892l-.4572 1.9047a2.301 2.301 0 0 1-2.2374 1.764H6.9185a.5752.5752 0 0 1-.5752-.5752V7.7384c0-.4168.097-.8278.2834-1.2005l.2856-.5712a3.6878 3.6878 0 0 0 .3893-1.6509l-.0002-.4496ZM4.367 7a.767.767 0 0 0-.7669.767v3.2598a.767.767 0 0 0 .767.767h.767a.3835.3835 0 0 0 .3835-.3835V7.3835A.3835.3835 0 0 0 5.134 7h-.767Z' fill='%23fff'/%3E%3Cdefs%3E%3CradialGradient id='paint1_radial_15251_63610' cx='0' cy='0' r='1' gradientUnits='userSpaceOnUse' gradientTransform='rotate(90 .0005 8) scale(7.99958)'%3E%3Cstop offset='.5618' stop-color='%230866FF' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%230866FF' stop-opacity='.1'/%3E%3C/radialGradient%3E%3CradialGradient id='paint2_radial_15251_63610' cx='0' cy='0' r='1' gradientUnits='userSpaceOnUse' gradientTransform='rotate(45 -4.5257 10.9237) scale(10.1818)'%3E%3Cstop offset='.3143' stop-color='%2302ADFC'/%3E%3Cstop offset='1' stop-color='%2302ADFC' stop-opacity='0'/%3E%3C/radialGradient%3E%3ClinearGradient id='paint0_linear_15251_63610' x1='2.3989' y1='2.3999' x2='13.5983' y2='13.5993' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%2302ADFC'/%3E%3Cstop offset='.5' stop-color='%230866FF'/%3E%3Cstop offset='1' stop-color='%232B7EFF'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E">
+                                    <span class="raise1 ms-2">14</span>
+                                    <span class="click-raise1 ms-2" style="display: none;">15</span>
+                                </div>
+                                <hr class="my-0 d-none d-lg-block">
+                                <div class="bottom-buttons d-flex justify-content-between align-items-center">
+                                    <button id="like-button" class="btn ms-0 ms-lg-2 d-flex align-items-center border-0">
+    
+                                        <img src="assets/img/" alt="">
+                                        <i class="bi bi-hand-thumbs-up fs-5 pb-1"></i>
+                                        <span class="d-none d-lg-block fw-medium mx-2 ">Beğen</span>
+                                        <span class="raise1 ms-2 d-lg-none">14</span>
+                                        <span class="click-raise1 ms-2 d-lg-none" style="display: none;">15</span>
+    
+    
+                                    </button>
+    
+                                    <button id="yorumyapbtn" type="button"
+                                        class="btn ms-0 ms-lg-2 d-flex align-items-center border-0">
+                                        <i data-visualcompletion="css-img" class="x1b0d499 x1d69dk1"
+                                            style="background-image:url('https://static.xx.fbcdn.net/rsrc.php/v3/y3/r/JC3GCxn_mNT.png');background-position:0 -546px;background-size:auto;width:20px;height:20px;background-repeat:no-repeat;display:inline-block"></i>
+                                        <span class="d-none d-lg-block fw-medium mx-2 ">Yorum Yap</span>
+                                    </button>
+    
+                                    <button id="whatsApp" type="button"
+                                        class="btn ms-0 ms-lg-2 d-flex align-items-center border-0 ">
+                                        <i data-visualcompletion="css-img" class="x1b0d499 x1d69dk1"
+                                            style="background-image:url('https://static.xx.fbcdn.net/rsrc.php/v3/y3/r/JC3GCxn_mNT.png');background-position:0 -399px;background-size:auto;width:20px;height:20px;background-repeat:no-repeat;display:inline-block"></i>
+                                        <a class="d-none d-lg-block fw-medium mx-2 text-decoration-none text-dark"
+                                            href="https://api.whatsapp.com/send/?text=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fp%2F8fyXcfiCSjt1Cx4S%2F&type=custom_url&app_absent=0">Gönder</a>
+                                    </button>
+    
+                                    <button id="paylas-btn" type="button"
+                                        class="btn ms-0 ms-lg-2 d-flex align-items-center border-0" data-bs-toggle="modal"
+                                        data-bs-target="#paylasmodal">
+                                        <i data-visualcompletion="css-img" class="x1b0d499 x1d69dk1"
+                                            style="background-image:url('https://static.xx.fbcdn.net/rsrc.php/v3/y3/r/JC3GCxn_mNT.png');background-position:0 -861px;background-size:auto;width:20px;height:20px;background-repeat:no-repeat;display:inline-block"></i>
+                                        <span class="d-none d-lg-block fw-medium mx-2 ">paylaş</span>
+                                    </button>
+                                </div>
+                                <hr class="my-0 d-none d-lg-block">
+    
+    
+    
+                            </div>
+                        </div>
+                        <div class="mobile-comment-wrapper my-3 ">
+                            <div class="d-flex justify-content-center align-items-center flex-column">
+                                <div>
+                                    <img src="https://static.xx.fbcdn.net/rsrc.php/v3/yi/r/hIN1zlXhsw3.png"
+                                        data-type="image" alt="" data-image-id="4299436807718923460" class="img contain"
+                                        width="100px" height="100px">
+                                </div>
+                                <div class="d-flex align-items-center  flex-column">
+                                    <span class="fw-bolder">Henüz yorum yok.</span>
+                                    <span>İlk yorum yapan sen ol.</span>
+                                </div>
+    
+    
+                            </div>
+    
+                        </div>
+                        <ul id="commentsList1" class="list-border list-group mt-4 ms-5 ps-2 " style="display: none; width: fit-content;">
+                            <!-- Yorumlar buraya eklenecek -->
+                        </ul>
+                    </div>
+    
+                    <div class="modal-footerr position-fixed w-100 bottom-0 mb-3 me-2 border-top ">
+                        <div class="d-flex ">
+                            <div class="mx-2">
+                                <i class="bi bi-file-image fs-3"></i>
+                            </div>
+    
+                            <div class="form-group  position-relative w-100">
+                                <textarea id="commentInput"
+                                    class="form-control bg-secondary rounded-pill border-0  overflow-y-hidden w-100 position-relative"
+                                    rows="3" placeholder="Yorumunuzu buraya yazın..."
+                                    style="height: 40px; outline: none; padding-right: 110px;"></textarea>
+    
+                                <div class="mobile-commentEmotes position-absolute  top-0" style="right: 3%; ">
+                                    <i class="bi bi-badge-3d fs-2 mx-1"></i>
+                                    <i class="bi bi-at fs-2 mx-1"></i>
+                                    <i class="bi bi-emoji-smile fs-2 mx-1"></i>
+                                </div>
+    
+                                <div id="submitComment" class="position-absolute "
+                                    style="right: 3%; top: 10px; display: none;" role="button">
+                                    <i data-visualcompletion="css-img"
+                                        style="background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v3/y4/r/C09cASqHtMe.png&quot;); background-position: 0px -331px; background-size: auto; width: 16px; height: 16px; background-repeat: no-repeat; display: inline-block;"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+              
+           
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            // İlk yazı yazıldığında submitComment-mobile gözüksün, mobile-commentEmotes gizlensin
+            $('#commentInput').on('input', function () {
+                if ($(this).val().length > 0) {
+                    $('.mobile-commentEmotes').hide();
+                    $('#submitComment').show();
+                } else {
+                    $('.mobile-commentEmotes').show();
+                    $('#submitComment').hide();
+                }
+            });
+
+            // submitComment-mobile tıklanıldığında mobile-commentEmotes tekrar gözüksün, submitComment-mobile gizlensin
+            $('#submitComment').on('click', function () {
+                $(this).hide();
+                $('.mobile-commentEmotes').show();
+            });
+
+            $("#submitComment").click(function () {
+                $(".mobile-comment-wrapper").hide();
+       
+
+            })
+
+        });
+
+    </script>
+
+    <script>
+        document.getElementById('submitComment').addEventListener('click', function () {
+            var commentInput = document.getElementById('commentInput');
+            var commentText = commentInput.value.trim();
+
+            if (commentText !== "") {
+                // Yorum yapanın ismi ve profil resmi
+                var userName = "Muhammad ali"; // Yorum yapanın adı
+                var userImage = "http://127.0.0.1:5500/assets/img/profilephoto.jpg";  // Profil resmi URL
+
+                // Yeni yorum  oluştur
+                var commentItem = document.createElement('li');
+                commentItem.className = "list-group-item d-flex align-items-start";
+
+                // Profil resmi + isim ekle
+                var commentContent = `
+        <img src="${userImage}" alt="${userName}" class="rounded-circle me-3" width="40" height="40">
+        <div>
+            <strong>${userName}</strong>
+            <p class="mb-1">${commentText}</p>
+        </div>
+    `;
+
+                commentItem.innerHTML = commentContent;
+
+                // Yorumları listeye ekleme
+                var commentsList = document.getElementById('commentsList1');
+                commentsList.appendChild(commentItem);
+
+                // Yorum kutusunu temizle
+                commentInput.value = "";
+
+                // Listeyi göster
+                commentsList.style.display = 'block';
+            }
+        });
+    </script>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="assets/js/mobile.js"></script>
+    <script src="assets/js/slider.js"></script>
+
+    <!-- bootstrap script  -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
