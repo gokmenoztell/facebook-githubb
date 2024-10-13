@@ -9,10 +9,8 @@ body {
 h1 {
     font-size: 4.5rem !important;
     font-weight: 700 !important;
-}
 
-.btn-close {
-    color: #FFF !important;
+
 }
 
 .swiper-button-next,
@@ -21,22 +19,6 @@ h1 {
     --swiper-navigation-size: 16px !important;
     width: 40px !important;
     height: 40px !important;
-}
-.r-0{
-    right: 0 !important;
-}
-.left-0{
-    left: 0 !important;
-}
-
-.w-40 {
-    width: 40px;
-}
-.lh-0{
-    line-height: 0;
-}
-.h-40 {
-    height: 40px;
 }
 
 .forgot-loginBtn {
@@ -73,10 +55,6 @@ h1 {
     color: var(--swiper-navigation-color, var(--swiper-theme-color));
 }
 
-.tutu .swiper-slide {
-    width: 230px !important;
-}
-
 .swiper-button-next-6,
 .swiper-button-next-5,
 .swiper-button-next-4,
@@ -99,6 +77,8 @@ h1 {
     border-radius: var(--bs-modal-border-radius);
     outline: 0;
 }
+
+
 
 .user:hover {
     background-color: #c2cad6;
@@ -147,7 +127,7 @@ h1 {
     overflow-y: scroll;
     overflow-x: hidden;
     max-width: inherit;
-    width: 15.8%;
+    width: 19.6%;
     /**/
 }
 
@@ -196,7 +176,7 @@ h1 {
 .search-box {
     height: 40px;
     display: flex;
-   
+    cursor: pointer;
     padding: 10px 20px;
     border-radius: 30px;
     align-items: center;
@@ -287,7 +267,14 @@ h1 {
     color: #6c757d;
 }
 
-
+.dropdown-toggle {
+    position: relative;
+    /* ::after elementinin konumunu bu öğeye göre belirle */
+    text-align: left;
+    /* Metni sola yasla */
+    padding-left: 15px;
+    /* Metni soldan biraz uzaklaştır */
+}
 
 .dropdown-toggle::after {
     content: '';
@@ -332,7 +319,7 @@ h1 {
     height: 85px !important;
     border-radius: 1rem !important;
     border: none !important;
-    margin: 2rem 0;
+    margin: 2rem 0 ;
 }
 
 .list-border li img {
@@ -454,8 +441,6 @@ textarea {
     max-height: 130px;
 }
 
-
-
 #threedots-content-dropdown {
     transform: translate(-340px, 20px) !important;
     height: 475px !important;
@@ -495,12 +480,34 @@ textarea {
     border-radius: 5px;
 }
 
+#big-menu {
+    display: none;
+}
+
+#messenger-dropdown {
+    display: none;
+}
+
+#messenger-dropdown2 {
+    display: none;
+}
+
+#notification {
+    display: none;
+}
+
+#notification2 {
+    display: none;
+}
 
 
+#see-profile-dropdown {
+    display: none;
+}
 
-
-
-
+#see-profile-dropdown2 {
+    display: none;
+}
 
 .left-hiddenMenu-2 {
     display: none;
@@ -538,15 +545,8 @@ textarea {
 .right-menu {
     overflow-y: hidden;
 }
-.btn-close{
-    width: 32px !important;
-    height: 32px !important;
-}
 
 @media only screen and (max-width: 991px) {
-    #searchBox-faceİco{
-        width: 100%;
-    }
     .col-lg-6 {
         padding: 0 !important;
     }
@@ -558,14 +558,12 @@ textarea {
     .swiper-slide p {
         font-size: 13px !important;
     }
-
     .list-border li img {
         position: absolute;
         left: -32%;
         width: 40px;
         height: 40px;
     }
-
     .input-search {
         display: none;
     }
@@ -620,7 +618,7 @@ textarea {
     #content-comment {
         display: none !important;
     }
-
+  
     #content-comment2 {
         display: none !important;
     }
@@ -629,50 +627,43 @@ textarea {
         display: none !important;
     }
 
-    #like-button {
-        padding: 9px 23px;
+    #like-button{
+        padding: 3px 25px;
         border-radius: 2rem;
         background-color: #f0f2f5;
     }
-
-    #like-button2 {
-        padding: 9px 23px;
+    #like-button2{
+        padding: 3px 25px;
         border-radius: 2rem;
         background-color: #f0f2f5;
     }
-
-    #like-button3 {
-        padding: 9px 23px;
+    #like-button3{
+        padding: 3px 25px;
         border-radius: 2rem;
         background-color: #f0f2f5;
     }
-
     #whatsApp {
-        padding: 10px 35px;
+        padding: 10px 38px;
         border-radius: 2rem;
         background-color: #f0f2f5;
     }
-
-    #paylas-btn {
-        padding: 10px 35px;
-        border-radius: 2rem;
-        background-color: #f0f2f5;
-    }
-
-    #yorumyapbtn {
-        padding: 10px 35px;
-        border-radius: 2rem;
-        background-color: #f0f2f5;
-    }
-
-    #yorumyapbtn2 {
-        padding: 10px 35px;
-        border-radius: 2rem;
-        background-color: #f0f2f5;
-    }
-
-    #yorumyapbtn3 {
-        padding: 10px 35px;
+   #paylas-btn{
+    padding: 10px 38px;
+    border-radius: 2rem;
+    background-color: #f0f2f5;
+   }
+   #yorumyapbtn{
+    padding: 10px 38px;
+    border-radius: 2rem;
+    background-color: #f0f2f5;
+}
+   #yorumyapbtn2{
+    padding: 10px 38px;
+    border-radius: 2rem;
+    background-color: #f0f2f5;
+}
+    #yorumyapbtn3{
+        padding: 10px 38px;
         border-radius: 2rem;
         background-color: #f0f2f5;
     }
@@ -691,54 +682,8 @@ textarea {
 }
 
 @media screen and (max-width: 420px) {
-
-    #like-button {
-        padding: 9px 23px;
-        border-radius: 2rem;
-        background-color: #f0f2f5;
+    .forgot-loginBtn {
+        width: 300px;
+        height: 340px;
     }
-
-    #like-button2 {
-        padding: 9px 23px;
-        border-radius: 2rem;
-        background-color: #f0f2f5;
-    }
-
-    #like-button3 {
-        padding: 9px 23px;
-        border-radius: 2rem;
-        background-color: #f0f2f5;
-    }
-
-    #whatsApp {
-        padding: 10px 30px;
-        border-radius: 2rem;
-        background-color: #f0f2f5;
-    }
-
-    #paylas-btn {
-        padding: 10px 30px;
-        border-radius: 2rem;
-        background-color: #f0f2f5;
-    }
-
-    #yorumyapbtn {
-        padding: 10px 30px;
-        border-radius: 2rem;
-        background-color: #f0f2f5;
-    }
-
-    #yorumyapbtn2 {
-        padding: 10px 30px;
-        border-radius: 2rem;
-        background-color: #f0f2f5;
-    }
-
-    #yorumyapbtn3 {
-        padding: 10px 30px;
-        border-radius: 2rem;
-        background-color: #f0f2f5;
-    }
-
-
 }
