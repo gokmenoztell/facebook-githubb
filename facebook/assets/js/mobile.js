@@ -73,13 +73,43 @@ $(document).ready(function () {
         $(this).hide();
     });
 
-    // Menü butonları
 
+
+
+    // Menü butonları
+    //big menu
+    $("#big-menu").hide();
     $("#big-menubtn").click(function () {
         $("#big-menu").toggle();
         $(".face-icon").show();
         $("#messenger-dropdown, #see-profile-dropdown, #search-dropdown, #notification, .back-button, #threedots-dropdown").hide();
     });
+
+    //notification
+    $("#notification").hide();
+    $("#notification-btn").click(function () {
+        $("#notification").toggle();
+        $(".face-icon").show();
+        $("#big-menu, #messenger-dropdown, #see-profile-dropdown, #search-dropdown, .back-button, #threedots-dropdown").hide();
+    });
+    //messenger btn
+
+    $("#messenger-dropdown").hide();
+    $("#messenger-btn").click(function () {
+        $("#messenger-dropdown").toggle();
+        $(".face-icon").show();
+        $("#big-menu, #notification, #see-profile-dropdown, #search-dropdown, .back-button, #threedots-dropdown").hide();
+    });
+
+    // Profil dropdown
+    $("#see-profile-dropdown").hide();
+    $("#see-profile").click(function () {
+        $("#see-profile-dropdown").toggle();
+        $(".face-icon").show();
+        $("#big-menu, #messenger-dropdown, #notification, #search-dropdown, .back-button").hide();
+    });
+    ////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////
 
     $("#big-menu2").hide();
     $("#big-menubtn2").click(function () {
@@ -88,18 +118,6 @@ $(document).ready(function () {
         $("#messenger-dropdown, #see-profile-dropdown2, #search-dropdown, #notification2, .back-button, #threedots-dropdown").hide();
     });
 
-    $("#big-menu3").hide();
-    $("#big-menubtn3").click(function () {
-        $("#big-menu3").toggle();
-        $(".face-icon").show();
-        $("#messenger-dropdown2, #see-profile-dropdown2, #search-dropdown, #notification3, .back-button, #threedots-dropdown").hide();
-    });
-
-    $("#notification-btn").click(function () {
-        $("#notification").toggle();
-        $(".face-icon").show();
-        $("#big-menu, #messenger-dropdown, #see-profile-dropdown, #search-dropdown, .back-button, #threedots-dropdown").hide();
-    });
 
     $("#notification2").hide();
     $("#notification-btn2").click(function () {
@@ -108,38 +126,54 @@ $(document).ready(function () {
         $("#big-menu2, #messenger-dropdown, #see-profile-dropdown2, #search-dropdown, .back-button, #threedots-dropdown").hide();
     });
 
-    $("#notification3").hide();
-    $("#notification-btn3").click(function () {
-        $("#notification3").toggle();
-        $(".face-icon").show();
-        $("#big-menu3, #messenger-dropdown2, #see-profile-dropdown2, #search-dropdown, .back-button, #threedots-dropdown").hide();
-    });
 
-    $("#messenger-btn").click(function () {
-        $("#messenger-dropdown").toggle();
-        $(".face-icon").show();
-        $("#big-menu, #notification, #see-profile-dropdown, #search-dropdown, .back-button, #threedots-dropdown").hide();
-    });
-
-    $("#messenger-btn2").click(function () {
-        $("#messenger-dropdown2").toggle();
-        $(".face-icon").show();
-        $("#big-menu3, #notification3, #see-profile-dropdown, #search-dropdown, .back-button, #threedots-dropdown").hide();
-    });
-
-    // Profil dropdown
-    $("#see-profile").click(function () {
-        $("#see-profile-dropdown").toggle();
-        $(".face-icon").show();
-        $("#big-menu, #messenger-dropdown, #notification, #search-dropdown, .back-button").hide();
-    });
-
-    // Profil dropdown
+    $("#see-profile-dropdown2").hide();
     $("#see-profile2").click(function () {
         $("#see-profile-dropdown2").toggle();
         $(".face-icon").show();
         $("#big-menu2, #messenger-dropdown, #notification2, #search-dropdown, .back-button").hide();
     });
+    ////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////
+
+
+
+    $("#big-menu3").hide();
+    $("#big-menubtn3").click(function () {
+        $("#big-menu3").toggle();
+        $(".face-icon").show();
+        $(".see-profile-3, #notification3, ").hide();
+    });
+
+    $("#notification3").hide();
+    $("#notification-btn3").click(function () {
+        $("#notification3").toggle();
+        $(".face-icon").show();
+        $("#big-menu3, #see-profile-dropdown3, .see-profile-3, ").hide();
+    });
+
+
+
+    
+    
+
+    
+  
+
+
+
+  
+
+
+
+
+ 
+
+
+
+
+
+
 
 
 
@@ -155,9 +189,6 @@ $(document).ready(function () {
     $("#share-button").click(function () {
         $(".modal, .modal-backdrop").hide();
     });
-
-
-
     // Search box actions
     $(".search-box").click(function () {
         $("#search-dropdown").show();
@@ -298,7 +329,6 @@ $(document).ready(function () {
         $('#photovideo-modal').modal('show');
     });
 
-
     $('#gönderi-geri-btn').click(function () {
         $('#konumara, #gönderi-threedots-modal').modal('hide');
         $('#photovideo-modal').modal('show');
@@ -310,13 +340,10 @@ $(document).ready(function () {
         $('.modal-backdrop').show();
     });
 
-    $('.btn-close').click(function () {
-        $('.modal, .modal-backdrop').hide();
-    });
+    // $('.btn-close').click(function () {
+    //     $('.modal, .modal-backdrop').hide(); //////////////////////////////////////////////////////
+    // });
 
-    
-    
- 
     // Modal opacity adjustment
     $(document).on('shown.bs.modal', function () {
         $('.modal-backdrop').css('opacity', '0.5');
@@ -340,32 +367,25 @@ $(document).ready(function () {
     $("#yorumyapbtn4").click(function () {
         $("#content-comment4").toggle();
     });
-    $(document).ready(function() {
-        $('#content-threedotsBtn').on('click', function(event) {
+    $(document).ready(function () {
+        $('#content-threedotsBtn').on('click', function (event) {
             event.stopPropagation(); // Butona tıklanmasını izole etmek için
             let dropdown = $('#content1-threedots-dropdown');
-    
+
             if (dropdown.is(':visible')) {
                 dropdown.hide(); // Eğer dropdown açıksa kapat
             } else {
                 dropdown.show(); // Eğer dropdown kapalıysa aç
             }
         });
-    
+
         // Sayfadaki herhangi bir yere tıklayınca dropdown'ı kapat
-        $(document).on('click', function(event) {
+        $(document).on('click', function (event) {
             if (!$(event.target).closest('#content-threedotsBtn, #content1-threedots-dropdown').length) {
                 $('#content1-threedots-dropdown').hide(); // Dropdown menüsünü gizle
             }
         });
     });
-    
-    
-
-
-
-
-
 
     // Button toggle
     const $button1 = $('#btn1');
@@ -380,6 +400,40 @@ $(document).ready(function () {
         $button2.addClass('active-button').removeClass('inactive-button');
         $button1.addClass('inactive-button').removeClass('active-button');
     });
+
+
+
+    // btn close ismine sahip olanlara tıklanınca modal-backdrop ile birlikte kapatma 
+    document.querySelectorAll('.btn-close').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            document.querySelectorAll('.modal-backdrop').forEach(function (backdrop) {
+                backdrop.style.display = 'none';
+            });
+        });
+    });
+    // hikaye oluştur içinde ayarlara tıklayınca çıkan modal'da  kaydet çıkış butonu
+    document.querySelectorAll('.story-closeBtn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            document.querySelectorAll('.modal-backdrop').forEach(function (backdrop) {
+                backdrop.style.display = 'none';
+            });
+            document.getElementById('smallModal2').style.display = 'none';
+        });
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 });

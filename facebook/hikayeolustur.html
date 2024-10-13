@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modals with Bootstrap</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/sass/variables.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- jquery script -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+        /* İlk modalın tam ekran olması için stil */
+        .modal-fullscreen {
+            width: 100vw;
+            height: 100vh;
+        }
+       
+        .story-card {
+            width: 260px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 15px;
+        }
+
+        .story-card img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .card-blue {
+            background: linear-gradient(to right, #1E90FF, #99ccff);
+        }
+
+        .card-pink {
+            background: linear-gradient(to right, #FF69B4, #ffccff);
+        }
+
+        .dropdown-item:hover {
+            background-color: transparent;
+            /* Arka plan rengini şeffaf yap */
+            color: inherit;
+            /* Metin rengini varsayılan rengine döndür */
+        }
+
+        .dropdown-hover:hover {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <button data-bs-toggle="modal" data-bs-target="#fullscreennModal2" id="openFullscreenModal" class="btn btn-primary">
+        Tam Ekran Modali Aç
+    </button>
+    <!-- Birinci Modal (Tam Ekran Modal) -->
+    <div class="modal fade" id="fullscreennModal2" tabindex="-1" aria-labelledby="fullscreennModalllLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-body p-0">
+                    <div class="container-fluid py-0 h-100">
+                        <div class="row h-100">
+                            <div class="col-md-2 p-0 ">
+                                <div class="d-flex align-items-center  shadow-sm px-3 py-2">
+                                    <button type="button" class="btn-close bg-secondary-subtle rounded-circle me-2 "
+                                        data-bs-dismiss="modal" aria-label="Close"></button>
+                                    <a href="home-page.html" class="face-icon  ">
+                                        <svg viewBox="0 0 36 36"
+                                            class=" x1lliihq x1tzjh5l x1k90msu x2h7rmj x1qfuztq x1ssd25i x19dipnz"
+                                            style="--color:var(--fb-logo)" fill="currentColor" height="40" width="40">
+                                            <path
+                                                d="M20.181 35.87C29.094 34.791 36 27.202 36 18c0-9.941-8.059-18-18-18S0 8.059 0 18c0 8.442 5.811 15.526 13.652 17.471L14 34h5.5l.681 1.87Z">
+                                            </path>
+                                            <path class="text-white xe3v8dz"
+                                                d="M13.651 35.471v-11.97H9.936V18h3.715v-2.37c0-6.127 2.772-8.964 8.784-8.964 1.138 0 3.103.223 3.91.446v4.983c-.425-.043-1.167-.065-2.081-.065-2.952 0-4.09 1.116-4.09 4.025V18h5.883l-1.008 5.5h-4.867v12.37a18.183 18.183 0 0 1-6.53-.399Z">
+                                            </path>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="d-flex justify-content-between p-3">
+                                    <h4 class="fw-bolder">Hikayen</h4>
+                                    <div id="createStory-settings" class="bg-secondary-subtle d-flex rounded-circle p-2"
+                                        role="button">
+                                        <img alt="" aria-hidden="true" height="24" width="24"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/ys/r/lu7nHqjtdqX.png">
+                                    </div>
+                                </div>
+                                <div class="p-3 pt-0">
+                                    <img src="assets/img/profilephoto.jpg" class="rounded-circle  object-fit-cover"
+                                        width="55px" height="55px" alt="avatar">
+                                    <span class=" ms-2 fw-medium">Muhammed</span>
+                                </div>
+                                <hr class="m-0 text-muted">
+                            </div>
+                            <div class="col-md-10  bg-secondary">
+                                <div class="modal-header  border-0  position-absolute end-0 ">
+                                    <div class="d-flex">
+                                        <!-- açılan menü -->
+                                        <div id="big-menubtn3"
+                                            class=" d-flex align-items-center w-40 h-40 justify-content-center p-1 mx-1 bg-secondary-subtle rounded-circle d-none d-lg-block align-content-center">
+                                            <i class="bi bi-grid-3x3-gap-fill text-black fs-5 d-flex justify-content-center "
+                                                type="button"></i>
+                                            <!-- sağ üst menü -->
+                                            <ul id="big-menu3"
+                                                class="dropdown-menu border-0 shadow p-3 overflow-auto show"
+                                                aria-labelledby="mainMenu"
+                                                style="width: 23em; max-height: 600px; position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(-135px, 60px);"
+                                                data-popper-placement="bottom-end">
+
+                                                <div>
+                                                    <li class="p-1 mx-2">
+                                                        <h2>Menü</h2>
+                                                    </li>
+                                                    <li class="p-1">
+                                                        <div class="input-group-text bg-gray border-0 rounded-pill"
+                                                            style="min-height: 40px; min-width: 230px">
+                                                            <i class="fas fa-search me-2 text-muted"></i>
+                                                            <input type="text"
+                                                                class="form-control rounded-pill border-0 bg-gray"
+                                                                placeholder="Search Menu">
+                                                        </div>
+                                                    </li>
+                                                    <!-- social items -->
+                                                    <h4 class="m-2">Sosyal</h4>
+                                                    <!-- s1 -->
+                                                    <li class="my-2 p-1">
+                                                        <a href="#" class="
+                                                      text-decoration-none text-dark
+                                                      d-flex
+                                                      align-items-center
+                                                      justify-content-between
+                                                    ">
+                                                            <div class="p-2">
+                                                                <img class="x1b0d499 xl1xv1r" alt="" aria-hidden="true"
+                                                                    src="https://static.xx.fbcdn.net/rsrc.php/v3/yr/r/qfMB40PdgWb.png"
+                                                                    style="height: 36px; width: 36px;">
+                                                            </div>
+                                                            <div>
+                                                                <p class="m-0">Etkinlikler</p>
+                                                                <span class="fs-7 text-muted">Çevrimiçi ve yakınlarda
+                                                                    yapılacak etkinlikler ve
+                                                                    diğer şeyler organize et veya bul.</span>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <!-- s2 -->
+                                                    <li class="my-2 p-1">
+                                                        <a href="#" class="
+                                                      text-decoration-none text-dark
+                                                      d-flex
+                                                      align-items-center
+                                                      justify-content-between
+                                                    ">
+                                                            <div class="p-2">
+                                                                <img class="x1b0d499 xl1xv1r" alt="" aria-hidden="true"
+                                                                    src="https://static.xx.fbcdn.net/rsrc.php/v3/yr/r/qfMB40PdgWb.png"
+                                                                    style="height: 36px; width: 36px;">
+                                                            </div>
+                                                            <div>
+                                                                <p class="m-0">Arkadaşlar</p>
+                                                                <span class="fs-7 text-muted">Arkadaşlarını veya tanıyor
+                                                                    olabileceğin kişileri
+                                                                    ara.</span>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <!-- s3 -->
+                                                    <li class="my-2 p-1">
+                                                        <a href="#" class="
+                                                      text-decoration-none text-dark
+                                                      d-flex
+                                                      align-items-center
+                                                      justify-content-between
+                                                    ">
+                                                            <div class="p-2">
+                                                                <img class="x1b0d499 xl1xv1r" alt="" aria-hidden="true"
+                                                                    src="https://static.xx.fbcdn.net/rsrc.php/v3/yr/r/qfMB40PdgWb.png"
+                                                                    style="height: 36px; width: 36px;">
+                                                            </div>
+                                                            <div>
+                                                                <p class="m-0">Gruplar</p>
+                                                                <span class="fs-7 text-muted">Seninle ortak ilgi
+                                                                    alanlarına sahip kişilerle
+                                                                    bağlantı kur.</span>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <!-- s4 -->
+                                                    <li class="my-2 p-1">
+                                                        <a href="#" class="
+                                                      text-decoration-none text-dark
+                                                      d-flex
+                                                      align-items-center
+                                                      justify-content-between
+                                                    ">
+                                                            <div class="p-2">
+                                                                <img class="x1b0d499 xl1xv1r" alt="" aria-hidden="true"
+                                                                    src="https://static.xx.fbcdn.net/rsrc.php/v3/yr/r/qfMB40PdgWb.png"
+                                                                    style="height: 36px; width: 36px;">
+                                                            </div>
+                                                            <div>
+                                                                <p class="m-0">Haber kaynağı</p>
+                                                                <span class="fs-7 text-muted">Seninle ortak ilgi
+                                                                    alanlarına sahip kişilerle
+                                                                    bağlantı kur.</span>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <!-- s5 -->
+                                                    <li class="my-2 p-1">
+                                                        <a href="#" class="
+                                                      text-decoration-none text-dark
+                                                      d-flex
+                                                      align-items-center
+                                                      justify-content-between
+                                                    ">
+                                                            <div class="p-2">
+                                                                <img class="x1b0d499 xl1xv1r" alt="" aria-hidden="true"
+                                                                    src="https://static.xx.fbcdn.net/rsrc.php/v3/yr/r/qfMB40PdgWb.png"
+                                                                    style="height: 36px; width: 36px;">
+                                                            </div>
+                                                            <div>
+                                                                <p class="m-0">Yeni haberler</p>
+                                                                <span class="fs-7 text-muted">Seninle ortak ilgi
+                                                                    alanlarına sahip kişilerle
+                                                                    bağlantı kur.</span>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <!-- s6 -->
+                                                    <li class="my-2 p-1">
+                                                        <a href="#" class="
+                                                      text-decoration-none text-dark
+                                                      d-flex
+                                                      align-items-center
+                                                      justify-content-between
+                                                    ">
+                                                            <div class="p-2">
+                                                                <img class="x1b0d499 xl1xv1r" alt="" aria-hidden="true"
+                                                                    src="https://static.xx.fbcdn.net/rsrc.php/v3/yr/r/qfMB40PdgWb.png"
+                                                                    style="height: 36px; width: 36px;">
+                                                            </div>
+                                                            <div>
+                                                                <p class="m-0">Ortaklar</p>
+                                                                <span class="fs-7 text-muted">Seninle ortak ilgi
+                                                                    alanlarına sahip kişilerle
+                                                                    bağlantı kur.</span>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <hr>
+                                                    <!-- ent items -->
+                                                    <h4 class="m-2">Akışlar</h4>
+                                                    <!-- e1 -->
+                                                    <li class="my-2 p-1">
+                                                        <a href="#" class="
+                                                      text-decoration-none text-dark
+                                                      d-flex
+                                                      align-items-center
+                                                      justify-content-between
+                                                    ">
+                                                            <div class="p-2">
+                                                                <img class="x1b0d499 xl1xv1r" alt="" aria-hidden="true"
+                                                                    src="https://static.xx.fbcdn.net/rsrc.php/v3/yr/r/qfMB40PdgWb.png"
+                                                                    style="height: 36px; width: 36px;">
+                                                            </div>
+                                                            <div>
+                                                                <p class="m-0">şirket</p>
+                                                                <span class="fs-7 text-muted">Seninle ortak ilgi
+                                                                    alanlarına sahip kişilerle
+                                                                    bağlantı kur.</span>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <!-- e2 -->
+                                                    <li class="my-2 p-1">
+                                                        <a href="#" class="
+                                                      text-decoration-none text-dark
+                                                      d-flex
+                                                      align-items-center
+                                                      justify-content-between
+                                                    ">
+                                                            <div class="p-2">
+                                                                <img class="x1b0d499 xl1xv1r" alt="" aria-hidden="true"
+                                                                    src="https://static.xx.fbcdn.net/rsrc.php/v3/yr/r/qfMB40PdgWb.png"
+                                                                    style="height: 36px; width: 36px;">
+                                                            </div>
+                                                            <div>
+                                                                <p class="m-0">Etkinlikler</p>
+                                                                <span class="fs-7 text-muted">Seninle ortak ilgi
+                                                                    alanlarına sahip kişilerle
+                                                                    bağlantı kur.</span>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <!-- e3 -->
+                                                    <li class="my-2 p-1">
+                                                        <a href="#" class="
+                                                      text-decoration-none text-dark
+                                                      d-flex
+                                                      align-items-center
+                                                      justify-content-between
+                                                    ">
+                                                            <div class="p-2">
+                                                                <img class="x1b0d499 xl1xv1r" alt="" aria-hidden="true"
+                                                                    src="https://static.xx.fbcdn.net/rsrc.php/v3/yr/r/qfMB40PdgWb.png"
+                                                                    style="height: 36px; width: 36px;">
+                                                            </div>
+                                                            <div>
+                                                                <p class="m-0">ekip</p>
+                                                                <span class="fs-7 text-muted">Seninle ortak ilgi
+                                                                    alanlarına sahip kişilerle
+                                                                    bağlantı kur.</span>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                </div>
+                                                <hr>
+                                                <!-- create -->
+                                                <div>
+                                                    <!-- header -->
+                                                    <li class="p-1 mx-2">
+                                                        <h2>Oluştur</h2>
+                                                    </li>
+                                                    <!-- c-1 -->
+                                                    <li class="my-2 p-1">
+                                                        <a href="#" class="
+                                                      text-decoration-none text-dark
+                                                      d-flex
+                                                      align-items-center
+                                                    ">
+                                                            <div class="
+                                                        rounded-circle
+                                                        bg-gray
+                                                        p-1
+                                                        d-flex
+                                                        align-items-center
+                                                        justify-content-center
+                                                        me-3 w-40 h-40">
+                                                                <i class="fas fa-edit"></i>
+                                                            </div>
+                                                            <div>
+                                                                <p class="m-0">Post</p>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <!-- c-2 -->
+                                                    <li class="my-2 p-1">
+                                                        <a href="#" class="
+                                                      text-decoration-none text-dark
+                                                      d-flex
+                                                      align-items-center
+                                                    ">
+                                                            <div class="
+                                                        rounded-circle
+                                                        bg-gray
+                                                        p-1
+                                                        d-flex
+                                                        align-items-center
+                                                        justify-content-center
+                                                        me-3 w-40 h-40">
+                                                                <i class="fas fa-book-open"></i>
+                                                            </div>
+                                                            <div>
+                                                                <p class="m-0">Story</p>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <!-- c-3 -->
+                                                    <li class="my-2 p-1">
+                                                        <a href="#" class="
+                                                      text-decoration-none text-dark
+                                                      d-flex
+                                                      align-items-center
+                                                    ">
+                                                            <div class="
+                                                        rounded-circle
+                                                        bg-gray
+                                                        p-1
+                                                        d-flex
+                                                        align-items-center
+                                                        justify-content-center
+                                                        me-3 w-40 h-40">
+                                                                <i class="fas fa-video"></i>
+                                                            </div>
+                                                            <div>
+                                                                <p class="m-0">Video</p>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <hr>
+                                                    <!-- c-4 -->
+                                                    <li class="my-2 p-1">
+                                                        <a href="#" class="
+                                                      text-decoration-none text-dark
+                                                      d-flex
+                                                      align-items-center
+                                                    ">
+                                                            <div class="
+                                                        rounded-circle
+                                                        bg-gray
+                                                        p-1
+                                                        d-flex
+                                                        align-items-center
+                                                        justify-content-center
+                                                        me-3 w-40 h-40">
+                                                                <i class="fas fa-flag"></i>
+                                                            </div>
+                                                            <div>
+                                                                <p class="m-0">Page</p>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <!-- c-5 -->
+                                                    <li class="my-2 p-1">
+                                                        <a href="#" class="
+                                                      text-decoration-none text-dark
+                                                      d-flex
+                                                      align-items-center
+                                                    ">
+                                                            <div class="
+                                                        rounded-circle
+                                                        bg-gray
+                                                        p-1
+                                                        d-flex
+                                                        align-items-center
+                                                        justify-content-center
+                                                        me-3 w-40 h-40">
+                                                                <i class="fas fa-bullhorn"></i>
+                                                            </div>
+                                                            <div>
+                                                                <p class="m-0">Add</p>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <!-- c-6 -->
+                                                    <li class="my-2 p-1">
+                                                        <a href="#" class="
+                                                      text-decoration-none text-dark
+                                                      d-flex
+                                                      align-items-center
+                                                    ">
+                                                            <div class="
+                                                        rounded-circle
+                                                        bg-gray
+                                                        p-1
+                                                        d-flex
+                                                        align-items-center
+                                                        justify-content-center
+                                                        me-3 w-40 h-40">
+                                                                <i class="fas fa-users"></i>
+                                                            </div>
+                                                            <div>
+                                                                <p class="m-0">Group</p>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <!-- c-7-->
+                                                    <li class="my-2 p-1">
+                                                        <a href="#" class="
+                                                      text-decoration-none text-dark
+                                                      d-flex
+                                                      align-items-center
+                                                    ">
+                                                            <div class="
+                                                        rounded-circle
+                                                        bg-gray
+                                                        p-1
+                                                        d-flex
+                                                        align-items-center
+                                                        justify-content-center
+                                                        me-3 w-40 h-40">
+                                                                <i class="fas fa-book"></i>
+                                                            </div>
+                                                            <div>
+                                                                <p class="m-0">Event</p>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <!-- c-8 -->
+                                                    <li class="my-2 p-1">
+                                                        <a href="#" class="
+                                                      text-decoration-none text-dark
+                                                      d-flex
+                                                      align-items-center
+                                                    ">
+                                                            <div class="
+                                                        rounded-circle
+                                                        bg-gray
+                                                        p-1
+                                                        d-flex
+                                                        align-items-center
+                                                        justify-content-center
+                                                        me-3 w-40 h-40">
+                                                                <i class="fas fa-shopping-basket"></i>
+                                                            </div>
+                                                            <div>
+                                                                <p class="m-0">Marketplace Listing</p>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <!-- c-9 -->
+                                                    <li class="my-2 p-1">
+                                                        <a href="#" class="
+                                                      text-decoration-none text-dark
+                                                      d-flex
+                                                      align-items-center
+                                                    ">
+                                                            <div class="
+                                                        rounded-circle
+                                                        bg-gray
+                                                        p-1
+                                                        d-flex
+                                                        align-items-center
+                                                        justify-content-center
+                                                        me-3 w-40 h-40">
+                                                                <i class="fas fa-suitcase"></i>
+                                                            </div>
+                                                            <div>
+                                                                <p class="m-0">Job</p>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                </div>
+                                            </ul>
+                                            <!-- sağ üst menü bitiş -->
+                                        </div>
+
+                                        <!-- bildirimler -->
+                                        <div id="notification-btn3"
+                                            class=" d-none d-xl-flex align-items-center justify-content-center bg-secondary-subtle rounded-circle  w-40 h-40 mx-1">
+                                            <i class="bi bi-bell-fill fs-5 d-flex justify-content-center"
+                                                type="button"></i>
+                                            <!-- bildirimler dropdown -->
+                                            <ul id="notification3" class="dropdown-menu border-0 shadow p-3 show"
+                                                aria-labelledby="notMenu"
+                                                style="width: 23em; max-height: 600px; overflow-y: auto; position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(-85px, 60px);"
+                                                data-popper-placement="bottom-end">
+                                                <!-- header -->
+                                                <li class="p-1">
+                                                    <div class="d-flex justify-content-between">
+                                                        <h3 class="fw-bold">Bildirimler</h3>
+                                                        <div>
+                                                            <i class="
+                                                                     fas
+                                                                     fa-ellipsis-h
+                                                                     pointer
+                                                                     p-2
+                                                                     rounded-circle
+                                                                     bg-gray
+                                                                   " type="button" data-bs-toggle="dropdown"
+                                                                id="notification-threedots-btn"></i>
+                                                            <!-- bildirimler içinde ufak ayarlar dropdown -->
+                                                            <ul class="dropdown-menu" id="notification-threedots">
+                                                                <li class="dropdown-item d-flex align-items-center"
+                                                                    type="button">
+                                                                    <i class="fas fa-check me-3 text-muted"></i>
+                                                                    <p class="m-0">Tümünü okundu olarak işaretle</p>
+                                                                </li>
+                                                                <li class="dropdown-item d-flex align-items-center"
+                                                                    type="button">
+                                                                    <i class="fas fa-cog me-3 text-muted"></i>
+                                                                    <p class="m-0">Bildirim ayarları</p>
+                                                                </li>
+                                                                <li class="dropdown-item d-flex align-items-center"
+                                                                    type="button">
+                                                                    <i class="fas fa-desktop me-3 text-muted"></i>
+                                                                    <p class="m-0">Bildirimleri aç</p>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex" type="button">
+                                                        <p class="rounded-pill bg-gray p-2">Tümü</p>
+                                                        <p class="rounded-pill bg-gray p-2">okunmayanlar</p>
+                                                    </div>
+                                                </li>
+                                                <!-- news -->
+                                                <div class="d-flex justify-content-between mx-2">
+                                                    <h5>Daha öncekiler</h5>
+                                                    <a href="#" class="text-decoration-none">Tümünü gör</a>
+                                                </div>
+                                                <!-- news 1 -->
+                                                <li class="my-2 p-1">
+                                                    <a href="#" class="
+                                                                 d-flex
+                                                                 align-items-center
+                                                                 justify-content-evenly
+                                                                 text-decoration-none text-dark
+                                                               ">
+                                                        <div class="d-flex align-items-center justify-content-evenly">
+                                                            <div class="p-2">
+                                                                <img src="assets/img/profilephoto.jpg" alt="avatar"
+                                                                    class="rounded-circle"
+                                                                    style="width: 58px; height: 58px; object-fit: cover">
+                                                            </div>
+                                                            <div>
+                                                                <p class="fs-7 m-0">
+                                                                    Yeni bir arkadaş önerin var
+                                                                </p>
+                                                                <span class="fs-7 text-primary">ahmet </span>
+                                                            </div>
+                                                        </div>
+                                                        <i class="fas fa-circle fs-7 text-primary"></i>
+                                                    </a>
+                                                </li>
+                                                <!-- news 2 -->
+                                                <li class="my-2 p-1">
+                                                    <a href="#" class="
+                                                                 d-flex
+                                                                 align-items-center
+                                                                 justify-content-evenly
+                                                                 text-decoration-none text-dark
+                                                               ">
+                                                        <div class="d-flex align-items-center justify-content-evenly">
+                                                            <div class="p-2">
+                                                                <img src="assets/img/profilephoto.jpg" alt="avatar"
+                                                                    class="rounded-circle"
+                                                                    style="width: 58px; height: 58px; object-fit: cover">
+                                                            </div>
+                                                            <div>
+                                                                <p class="fs-7 m-0">
+                                                                    Yeni bir arkadaş önerin var
+                                                                </p>
+                                                                <span class="fs-7 text-primary">ahmet</span>
+                                                            </div>
+                                                        </div>
+                                                        <i class="fas fa-circle fs-7 text-primary"></i>
+                                                    </a>
+                                                </li>
+                                                <!-- news 3 -->
+                                                <li class="my-2 p-1">
+                                                    <a href="#" class="
+                                                                 d-flex
+                                                                 align-items-center
+                                                                 justify-content-evenly
+                                                                 text-decoration-none text-dark
+                                                               ">
+                                                        <div class="d-flex align-items-center justify-content-evenly">
+                                                            <div class="p-2">
+                                                                <img src="assets/img/profilephoto.jpg" alt="avatar"
+                                                                    class="rounded-circle"
+                                                                    style="width: 58px; height: 58px; object-fit: cover">
+                                                            </div>
+                                                            <div>
+                                                                <p class="fs-7 m-0">
+                                                                    Yeni bir arkadaş önerin var
+                                                                </p>
+                                                                <span class="fs-7 text-primary">ahmet </span>
+                                                            </div>
+                                                        </div>
+                                                        <i class="fas fa-circle fs-7 text-primary"></i>
+                                                    </a>
+                                                </li>
+                                                <!-- news 4 -->
+                                                <li class="my-2 p-1">
+                                                    <a href="#" class="
+                                                                 d-flex
+                                                                 align-items-center
+                                                                 justify-content-evenly
+                                                                 text-decoration-none text-dark
+                                                               ">
+                                                        <div class="d-flex align-items-center justify-content-evenly">
+                                                            <div class="p-2">
+                                                                <img src="assets/img/profilephoto.jpg" alt="avatar"
+                                                                    class="rounded-circle"
+                                                                    style="width: 58px; height: 58px; object-fit: cover">
+                                                            </div>
+                                                            <div>
+                                                                <p class="fs-7 m-0">
+                                                                    Yeni bir arkadaş önerin var
+                                                                </p>
+                                                                <span class="fs-7 text-primary">ahmet </span>
+                                                            </div>
+                                                        </div>
+                                                        <i class="fas fa-circle fs-7 text-primary"></i>
+                                                    </a>
+                                                </li>
+                                                <!-- news 5 -->
+                                                <li class="my-2 p-1">
+                                                    <a href="#" class="d-flex align-items-center justify-content-evenly text-decoration-none text-dark
+                                                               ">
+                                                        <div class="d-flex align-items-center justify-content-evenly">
+                                                            <div class="p-2">
+                                                                <img src="assets/img/profilephoto.jpg" alt="avatar"
+                                                                    class="rounded-circle"
+                                                                    style="width: 58px; height: 58px; object-fit: cover">
+                                                            </div>
+                                                            <div>
+                                                                <p class="fs-7 m-0">
+                                                                    Yeni bir arkadaş önerin var
+                                                                </p>
+                                                                <span class="fs-7 text-primary">ahmet </span>
+                                                            </div>
+                                                        </div>
+                                                        <i class="fas fa-circle fs-7 text-primary"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="dropdown mx-1">
+                                            <div
+                                            id="img-dp" role="button" class="dropdown-toggle" data-bs-toggle="dropdown">
+                                                <img src="assets/img/profilephoto.jpg"
+                                                    class="rounded-circle  object-fit-cover w-40 h-40" alt="avatar">
+                                            </div>
+                                            <ul id="mainDropdown" class="dropdown-menu border-0 m-3 position-absolute r-0" 
+                                                style="width: 20vw;">
+                                                <li>
+                                                    <div class="dropdown-item d-flex align-items-center px-3 py-2">
+                                                        <div class="card-body w-100 text-center">
+                                                            <div class=" p-2 rounded d-flex Larger shadow flex-column"
+                                                                type="button">
+                                                                <div class="d-flex align-items-center">
+                                                                    <img src="assets/img/profilephoto.jpg" alt="avatar"
+                                                                        class="rounded-circle me-2"
+                                                                        style="width: 45px; height: 45px; object-fit: cover">
+                                                                    <p class="m-0 fw-medium">Muhammed Ali</p>
+                                                                </div>
+                                                                <div>
+                                                                    <hr>
+                                                                    <p class="m-0 fw-medium  text-primary">Profili
+                                                                        görüntüle</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+                                                <li class="mx-2 my-1">
+                                                    <div class="dropdown-item p-0" id="openSettings">
+                                                        <div
+                                                            class="d-flex align-items-center rounded-2 dropdown-hover px-2 py-1  ">
+                                                            <i
+                                                                class="bi bi-gear-fill fs-5  w-40 h-40 rounded-circle  bg-secondary-subtle d-flex align-items-center justify-content-center "></i>
+                                                            <p class="ms-3 my-0 fw-medium">Ayarlar &amp; Gizlilik</p>
+                                                            <i class="bi bi-chevron-right ms-auto fs-3"></i>
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+                                                <li class="mx-2 my-1">
+                                                    <div class="dropdown-item p-0">
+                                                        <div id="openSettings2"
+                                                            class="d-flex align-items-center  rounded-2 dropdown-hover px-2 py-1 ">
+                                                            <i
+                                                                class="bi bi-question-circle-fill fs-5 bg-secondary-subtle w-40 h-40 rounded-circle d-flex align-items-center justify-content-center "></i>
+                                                            <p class=" ms-3 my-0 fw-medium">Yardım &amp; Destek</p>
+                                                            <i class="bi bi-chevron-right ms-auto fs-3"></i>
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+                                                <li class="mx-2 my-1">
+                                                    <div class="dropdown-item p-0">
+                                                        <div
+                                                            class="d-flex align-items-center  rounded-2 dropdown-hover px-2 py-1 ">
+                                                            <i
+                                                                class="bi bi-moon-fill fs-5 bg-secondary-subtle w-40 h-40 rounded-circle d-flex align-items-center justify-content-center "></i>
+                                                            <p class=" ms-3 my-0 fw-medium">Görünüm &amp;
+                                                                Erişilebilirlik
+                                                            </p>
+                                                            <i class="bi bi-chevron-right ms-auto fs-3"></i>
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+                                                <li class="mx-2 my-1">
+                                                    <div class="dropdown-item p-0">
+                                                        <div
+                                                            class="d-flex align-items-center  rounded-2 dropdown-hover px-2 py-1 ">
+                                                            <i
+                                                                class="bi bi-exclamation-lg  bg-secondary-subtle w-40 h-40 rounded-circle  fs-4 d-flex align-items-center justify-content-center"></i>
+
+                                                            <p class=" ms-3 my-0 fw-medium">Görüş bildir
+                                                            </p>
+                                                            <i class="bi bi-chevron-right ms-auto fs-3"></i>
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+                                                <li class="mx-2 my-1">
+                                                    <div class="dropdown-item  p-0">
+                                                        <div
+                                                            class="d-flex align-items-center   rounded-2 dropdown-hover  px-2 py-1">
+                                                            <i
+                                                                class="bi bi-door-open-fill  bg-secondary-subtle w-40 h-40 rounded-circle  fs-5 d-flex align-items-center justify-content-center"></i>
+
+                                                            <p class=" ms-3 my-0 fw-medium">Çıkış yap
+                                                            </p>
+                                                            <i class="bi bi-chevron-right ms-auto fs-3"></i>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div id="settingsDropdown" style="display: none;">
+                                            <ul class="dropdown-menu border-0 m-3 show"
+                                                style="width: 20vw; position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(0px, 40px);"
+                                                data-popper-placement="bottom-end">
+
+                                                <li class="dropdown-header d-flex align-items-center mx-2 px-2">
+                                                    <div id="geribtn1" class="dropdown-hover p-0 d-flex align-items-center justify-content-center  rounded-circle  h-40 w-40 "
+                                                        role="button">
+                                                        <i class="bi bi-arrow-left fs-4"></i>
+                                                    
+                                                    </div>
+                                                    <div class="ms-3">
+                                                        <span class="fs-4 text-black">Ayarlar ve gizlilik
+                                                        </span>
+                                                    </div>
+                                                </li>
+
+                                                <li class="mx-2 my-1">
+                                                    <div
+                                                        class="dropdown-item d-flex justify-content-start align-items-center rounded-2 dropdown-hover px-2 py-1">
+                                                        <div
+                                                            class="bg-secondary-subtle h-40 w-40 rounded-circle d-flex align-items-center justify-content-center">
+                                                            <i class="bi bi-gear-fill fs-5 lh-0 "></i>
+                                                        </div>
+                                                        <div>
+                                                            <p class="ms-3 my-0 fw-medium">Ayarlar</p>
+                                                        </div>
+
+                                                    </div>
+                                                </li>
+
+                                                <li class="mx-2 my-1">
+                                                    <div
+                                                        class="dropdown-item d-flex justify-content-start align-items-center rounded-2 dropdown-hover px-2 py-1">
+                                                        <div
+                                                            class="bg-secondary-subtle h-40 w-40 rounded-circle d-flex align-items-center justify-content-center">
+                                                            <i class="bi bi-globe fs-5 lh-0"></i>
+                                                        </div>
+                                                        <div>
+                                                            <p class=" ms-3 my-0 fw-medium">Dil</p>
+                                                        </div>
+                                                        <i class="bi bi-chevron-right ms-auto fs-4"></i>
+                                                    </div>
+                                                </li>
+
+                                                <li class="mx-2 my-1">
+                                                    <div
+                                                        class="dropdown-item d-flex justify-content-start align-items-center rounded-2 dropdown-hover px-2 py-1">
+                                                        <div
+                                                            class="bg-secondary-subtle h-40 w-40 rounded-circle d-flex align-items-center justify-content-center">
+                                                            <i class="fa-solid fa-lock  fs-5 lh-0 "></i>
+                                                        </div>
+                                                        <div>
+                                                            <p class=" ms-3 my-0 fw-medium">Gizlilik Ayarı Kontrolü
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+                                                <li class="mx-2 my-1">
+                                                    <div
+                                                        class="dropdown-item d-flex justify-content-start align-items-center rounded-2 dropdown-hover px-2 py-1">
+                                                        <div
+                                                            class="bg-secondary-subtle h-40 w-40 rounded-circle d-flex align-items-center justify-content-center">
+                                                            <i class="fa-solid fa-lock  fs-5 lh-0 "></i>
+                                                        </div>
+                                                        <div>
+                                                            <p class=" ms-3 my-0 fw-medium">Gizlilik Merkezi
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+                                                <li class="mx-2 my-1">
+                                                    <div
+                                                        class="dropdown-item d-flex justify-content-start align-items-center rounded-2 dropdown-hover px-2 py-1">
+                                                        <div
+                                                            class="bg-secondary-subtle h-40 w-40 rounded-circle d-flex align-items-center justify-content-center">
+
+                                                            <i class="bi bi-list-task fs-5 lh-0"></i>
+                                                        </div>
+                                                        <div>
+                                                            <p class=" ms-3 my-0 fw-medium">Hareketler dökümü
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+                                                <li class="mx-2 my-1">
+                                                    <div
+                                                        class="dropdown-item d-flex justify-content-start align-items-center rounded-2 dropdown-hover px-2 py-1">
+                                                        <div
+                                                            class="bg-secondary-subtle h-40 w-40 rounded-circle d-flex align-items-center justify-content-center">
+                                                            <i class="bi bi-sliders fs-5 lh-0"></i>
+
+                                                        </div>
+                                                        <div>
+                                                            <p class=" ms-3 my-0 fw-medium">içerik Tercihleri
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div id="settingsDropdown2" style="display: none;">
+                                            <ul class="dropdown-menu border-0 m-3 show"
+                                                style="width: 20vw; position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(0px, 40px);"
+                                                data-popper-placement="bottom-end">
+                                                <li class="dropdown-header d-flex align-items-center mx-2 px-2">
+                                                    <div id="geribtn2" class="dropdown-hover p-0 d-flex align-items-center justify-content-center  rounded-circle  h-40 w-40 "
+                                                        role="button">
+                                                        <i class="bi bi-arrow-left fs-4"></i>
+                                                    
+                                                    </div>
+                                                    <div class="ms-3">
+                                                        <span class="fs-4 text-black">Ayarlar ve gizlilik
+                                                        </span>
+                                                    </div>
+                                                </li>
+
+
+                                                <li class="mx-2 my-1">
+                                                    <div class="dropdown-item  p-0">
+                                                        <div
+                                                            class="d-flex align-items-center   rounded-2 dropdown-hover  px-2 py-1">
+                                                            <i class="bi bi-question-circle-fill fs-5 bg-secondary-subtle w-40 h-40 rounded-circle d-flex align-items-center justify-content-center "></i>
+
+                                                            <p class=" ms-3 my-0 fw-medium">Yardım Merkezi
+                                                            </p>
+                                                         
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+
+
+                                                <li class="mx-2 my-1">
+                                                    <div class="dropdown-item  p-0">
+                                                        <div
+                                                            class="d-flex align-items-center   rounded-2 dropdown-hover  px-2 py-1">
+                                                            <i class="bi bi-envelope fs-5 bg-secondary-subtle w-40 h-40 rounded-circle d-flex align-items-center justify-content-center"></i>
+
+                                                            <p class=" ms-3 my-0 fw-medium">Destek Gelen kutusu
+                                                         
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+                                                <li class="mx-2 my-1">
+                                                    <div class="dropdown-item  p-0">
+                                                        <div
+                                                            class="d-flex align-items-center   rounded-2 dropdown-hover  px-2 py-1">
+                                                            <i
+                                                                class="bi bi-door-open-fill  bg-secondary-subtle w-40 h-40 rounded-circle  fs-5 d-flex align-items-center justify-content-center"></i>
+
+                                                            <p class=" ms-3 my-0 fw-medium">Sorun Bildirim
+                                                            </p>
+                                                          
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+                                       
+
+                                
+                                            </ul>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+                                <div class="d-flex align-items-center justify-content-center h-100">
+                                    <div class="story-card card-blue mx-2 flex-column" role="button">
+                                        <div
+                                            class="bg-white rounded-circle h-40 w-40 d-flex justify-content-center align-items-center ">
+                                            <i data-visualcompletion="css-img" class=" "
+                                                style="background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v3/yO/r/ID2pHHgu-4m.png&quot;); background-position: 0px -109px; background-size: auto; width: 20px; height: 20px; background-repeat: no-repeat; display: inline-block;"></i>
+                                        </div>
+                                        <div class="pt-2">
+                                            <p>Bir Fotoğraf Hikayesi Oluştur</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="story-card card-pink mx-2 flex-column" role="button">
+                                        <div
+                                            class="bg-white rounded-circle h-40 w-40 d-flex justify-content-center align-items-center">
+                                            <i data-visualcompletion="css-img" class="x1b0d499 xep6ejk"
+                                                style="background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v3/yY/r/EBvutOuy0EA.png&quot;); background-position: 0px -83px; background-size: auto; width: 20px; height: 20px; background-repeat: no-repeat; display: inline-block;"></i>
+                                        </div>
+                                        <div class="pt-2">
+                                            <p>Bir Yazı Hikayesi Oluştur</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal " id="smallModal2" tabindex="-1" aria-labelledby="smallModallllLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered " style="max-width: 30%;">
+            <div class="modal-content">
+                <div class="modal-header justify-content-center position-relative">
+                    <h1 class="modal-title fs-5 fw-bold">Hikaye Gizlilik Ayarı
+                    </h1>
+                </div>
+                <div class="modal-body">
+                    <div class="card-header d-flex flex-column py-2">
+                        <span class="fw-bold">
+                            Hikayelerini kimler görebilir?
+                        </span>
+                        <span class=" fw-lighter">
+                            Hikayen Facebook ve Messenger'da 24 saat boyunca görünecek.
+                        </span>
+                    </div>
+                    <div class="card-body ">
+                        <div>
+                            <form>
+                                <div class="form-check border-0 my-3 px-0">
+                                    <div class="d-flex align-items-center">
+                                        <div class="bg-secondary-subtle d-flex rounded-circle p-3">
+                                            <img class="x1b0d499 xep6ejk" alt="" aria-hidden="true" height="24"
+                                                width="24"
+                                                src="https://static.xx.fbcdn.net/rsrc.php/v3/yv/r/LklwCeCU4x0.png">
+                                        </div>
+                                        <div class="d-flex flex-column ms-2">
+                                            <span class="fw-bolder">Herkese Açık</span>
+                                            <span>Facebook veya Messenger'daki herkes</span>
+                                        </div>
+                                        <input class="form-check-input ms-auto" type="radio" name="targetAudience"
+                                            id="friends" checked>
+                                    </div>
+                                </div>
+                                <div class="form-check border-0 my-3 px-0">
+                                    <div class="d-flex align-items-center">
+                                        <div class="bg-secondary-subtle d-flex rounded-circle p-3">
+                                            <img class="x1b0d499 xep6ejk" alt="" aria-hidden="true" height="24"
+                                                width="24"
+                                                src="https://static.xx.fbcdn.net/rsrc.php/v3/yJ/r/S__jp-Cgqt_.png">
+                                        </div>
+                                        <div class="d-flex flex-column ms-2">
+                                            <span class="fw-bolder">Arkadaşlar</span>
+                                            <span>Sadece Facebook arkadaşların</span>
+                                        </div>
+                                        <input class="form-check-input ms-auto" type="radio" name="targetAudience"
+                                            id="exceptSomeFriends">
+                                    </div>
+                                </div>
+                                <div class="form-check border-0 my-3 px-0">
+                                    <div class="d-flex align-items-center">
+                                        <div class="bg-secondary-subtle d-flex rounded-circle p-3">
+                                            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"
+                                                aria-hidden="true"
+                                                class="x19dipnz x1lliihq x1tzjh5l x1k90msu x2h7rmj x1qfuztq"
+                                                style="--color: var(--primary-icon);">
+                                                <ellipse cx="12" cy="5.5" rx="4" ry="4.5"></ellipse>
+                                                <path
+                                                    d="M14.416 11.5H9.584A6.091 6.091 0 0 0 3.5 17.584v1.029A2.39 2.39 0 0 0 5.887 21h12.226a2.39 2.39 0 0 0 2.387-2.387v-1.029a6.091 6.091 0 0 0-6.084-6.084zM21.335 4.832a.62.62 0 0 0-.877 0L18.182 7.1a.617.617 0 0 0-.182.44v.826a.621.621 0 0 0 .609.619l.843.015h.011a.62.62 0 0 0 .442-.184l2.261-2.286a.617.617 0 0 0 0-.872zM22.991 3.181a.623.623 0 0 0-.878 0l-.207.207a.618.618 0 0 0 0 .875l.828.826a.622.622 0 0 0 .877 0l.207-.207a.616.616 0 0 0 0-.875z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <div class="d-flex flex-column ms-2">
+                                            <span class="fw-bolder">Özel</span>
+                                            <span> Hikayeni göstereceğin kişileri seç</span>
+                                        </div>
+                                        <input class="form-check-input ms-auto" type="radio" name="targetAudience"
+                                            id="exceptSomeFriends">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="px-3">
+                        <span class="fw-lighter">
+                            Hikayeni sadece arkadaşların ve bağlantıların doğrudan yanıtlayabilir.
+                        </span>
+                    </div>
+                    <hr>
+                    <div class="card-footer">
+                        <div class="footer-buttons  d-flex justify-content-end align-items-center">
+                            <div class="story-closeBtn me-4 text-primary fw-bold" role="button">
+                                iptal
+                            </div>
+                            <button type="submit" class="story-closeBtn btn btn-primary fw-bold px-5">Kaydet</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Küçük modalı açan fonksiyon
+            function openSmallModal2() {
+                var smallModal2 = new bootstrap.Modal(document.getElementById('smallModal2'), {
+                    backdrop: 'static',  // Arka plan kapatılmasın
+                    keyboard: false      // Klavye ile kapatma devre dışı
+                });
+                smallModal2.show();
+
+                // Z-index ayarlaması
+                var fullscreenModal2Element = document.getElementById('fullscreennModal2');
+                fullscreenModal2Element.style.zIndex = '1040';  // İlk modal z-index ayarı
+                smallModal2._element.parentElement.style.zIndex = '1050';  // İkinci modal daha yüksek z-index
+            }
+
+            // "Küçük Modali Aç" butonuna tıklayınca küçük modalı aç
+            document.getElementById('createStory-settings').addEventListener('click', openSmallModal2);
+
+            // Sadece küçük modalı kapat
+            document.getElementById('closeSmallModal').addEventListener('click', function () {
+                var smallModal2 = bootstrap.Modal.getInstance(document.getElementById('smallModal2'));
+                smallModal2.hide();  // Sadece smallModal2'yi kapat
+            });
+        });
+    </script>
+
+
+<script>
+    const imgDp = document.getElementById("img-dp");
+    const mainDropdown = document.getElementById("mainDropdown");
+    const settingsDropdown = document.getElementById("settingsDropdown");
+    const settingsDropdown2 = document.getElementById("settingsDropdown2");
+
+    let isMainDropdownOpen = false; // Ana dropdown'un durumu
+
+    imgDp.addEventListener("click", () => {
+        if (isMainDropdownOpen) {
+            // Eğer ana dropdown açıksa, tüm dropdownları kapat
+            mainDropdown.style.display = "none";
+            settingsDropdown.style.display = "none";
+            settingsDropdown2.style.display = "none";
+            isMainDropdownOpen = false; // Ana dropdown kapalı
+        } else {
+            // Ana dropdown'u aç
+            mainDropdown.style.display = "block";
+            isMainDropdownOpen = true; // Ana dropdown açık
+        }
+    });
+
+    document.getElementById("openSettings").addEventListener("click", () => {
+        mainDropdown.style.display = "none"; // Ana dropdown'ı kapat
+        settingsDropdown.style.display = "block"; // Ayarlar dropdown'ı aç
+    });
+
+    document.getElementById("geribtn1").addEventListener("click", () => {
+        settingsDropdown.style.display = "none"; // Ayarlar dropdown'ını kapat
+        mainDropdown.style.display = "block"; // Ana dropdown'ı aç
+    });
+
+    document.getElementById("openSettings2").addEventListener("click", () => {
+        mainDropdown.style.display = "none"; // Ana dropdown'ı kapat
+        settingsDropdown2.style.display = "block"; // Yardım dropdown'ı aç
+    });
+
+    document.getElementById("geribtn2").addEventListener("click", () => {
+        settingsDropdown2.style.display = "none"; // Yardım dropdown'ını kapat
+        mainDropdown.style.display = "block"; // Ana dropdown'ı aç
+    });
+</script>
+
+
+
+    <script src="assets/js/mobile.js"></script>
+    <script src="https://kit.fontawesome.com/bf8c07aa9d.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
